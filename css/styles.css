@@ -23,6 +23,10 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+#clue {
+  text-align: left;
+  margin-top: 20px;
+}
 body {
   justify-content: space-evenly;
   flex-direction: column;
