@@ -3,8 +3,18 @@
  * app.js */
 
 let game = '';
+let remainingClues = 3;
+
+const remainingCluesContainer = document.createElement('h3');
+const clueDiv = document.getElementById('clue');
+
+remainingCluesContainer.style.display = 'inline';
+remainingCluesContainer.textContent = remainingClues;
+clueDiv.appendChild(remainingCluesContainer);
 
 document.getElementById('btn__reset').addEventListener('click', function () {
+    remainingClues = 3;
+    remainingCluesContainer.textContent = remainingClues;
     game = new Game();
     game.startGame();
 
@@ -38,13 +48,8 @@ document.addEventListener('keypress', function (event) {
 
 });
 
-let remainingClues = 3;
-const remainingCluesContainer = document.createElement('h3');
-const clueDiv = document.getElementById('clue');
 
-remainingCluesContainer.style.display = 'inline';
-remainingCluesContainer.textContent = remainingClues;
-clueDiv.appendChild(remainingCluesContainer);
+
 
 //when a user clicks on the "Get a clue" button a letter in the active phrase revels and the remainingClues counter decreases by one;
 clueDiv.addEventListener('click', function () {
